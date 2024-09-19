@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     int damage = 10;
+    public GameObject materialPrefab;
     void Start()
     {
         
@@ -28,6 +29,25 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
 
+        dropMaterial();
         Destroy(gameObject);
     }
+
+    void dropMaterial()
+    {
+        int randomInt = Random.Range(1, 5);
+
+        // Instancia el prefab "Material" en el lugar donde el enemigo muere
+        GameObject materialObject = Instantiate(materialPrefab, transform.position, Quaternion.identity);
+
+        // Accede al componente Material para cambiar el tipo
+        Material materialDropped = materialObject.GetComponent<Material>();
+
+        if (materialDropped != null)
+        {
+            materialDropped.OnCreatedMaterial(randomInt);
+        }
+    }
 }
+
+
