@@ -7,12 +7,12 @@ public class EnemyBehavior : MonoBehaviour
 {
     int damage = 10;
     public GameObject materialPrefab;
-     [SerializeField] int damage;
+     [SerializeField] int dmgEnemy;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet")){
-            damage++;
-            if(damage >= 3)
+            dmgEnemy++;
+            if(dmgEnemy >= 3)
             {
                 
             }
