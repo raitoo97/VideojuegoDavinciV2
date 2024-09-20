@@ -7,6 +7,17 @@ public class EnemyBehavior : MonoBehaviour
 {
     int damage = 10;
     public GameObject materialPrefab;
+     [SerializeField] int damage;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet")){
+            damage++;
+            if(damage >= 3)
+            {
+                
+            }
+        }
+    }
     void Start()
     {
         
@@ -27,6 +38,11 @@ public class EnemyBehavior : MonoBehaviour
             {
                 playerHealth.TakeDamage(damage);
             }
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+
         }
 
         dropMaterial();
