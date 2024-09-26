@@ -6,6 +6,7 @@ public enum POSITION
 {
     UP, DOWN, LEFT, RIGHT
 }
+
 public class AnimationController : MonoBehaviour
 {
     public static AnimationController Instance;
