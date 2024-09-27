@@ -29,10 +29,21 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
 
+        
+
         dropMaterial();
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+
+            dropMaterial();
+            Destroy(gameObject);
+        }
+    }
     void dropMaterial()
     {
         int randomInt = Random.Range(1, 5);

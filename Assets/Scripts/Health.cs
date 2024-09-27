@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Color originalPlayerColor;
 
+    
+
     void Start()
     {
         //Actualizo vida actual con vida maxima
@@ -71,6 +73,10 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log("THE PLAYER HAS DIED");
+        if (gameObject != null)
+        {
+            Destroy(this.gameObject);
+        }
     }
    
 }
