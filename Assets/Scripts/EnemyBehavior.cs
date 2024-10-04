@@ -5,17 +5,40 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    int damage = 10;
+    Rigidbody2D rb;
+    [SerializeField] int damage = 10;
+    [SerializeField] int speed = 3;
+    [SerializeField] float chaseDistance = 5.5f;
+    [SerializeField] float knockback = 17.2f;
+    bool canMove;
+    GameObject player;
     public GameObject materialPrefab;
-    void Start()
-    {
-        
-    }
 
-    
-    void Update()
+    private void Start()
     {
-        
+        player = GameManager.instance.player;
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void FixedUpdate()
+    {
+        if (player != null)
+        {
+            if (Vector2.Distance(this.transform.position, player.transform.position) <= chaseDistance)
+            {
+                canMove = true;
+                transform.up = (player.transform.position - this.transform.position).normalized;
+            }
+            else
+            {
+                canMove= false;
+            }
+
+            if (canMove) 
+            {
+                rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
+            }
+            
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -23,16 +46,29 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (playerHealth != null) 
             {
                 playerHealth.TakeDamage(damage);
+                player.TakeKnockback(transform.up * knockback);
             }
         }
+
+        
 
         dropMaterial();
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+
+            dropMaterial();
+            Destroy(gameObject);
+        }
+    }
     void dropMaterial()
     {
         int randomInt = Random.Range(1, 5);
