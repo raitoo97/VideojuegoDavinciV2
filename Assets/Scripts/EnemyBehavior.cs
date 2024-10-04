@@ -43,6 +43,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy")) return;
         if (collision.gameObject.CompareTag("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
@@ -53,15 +54,11 @@ public class EnemyBehavior : MonoBehaviour
                 player.TakeKnockback(transform.up * knockback);
             }
         }
-
-        
-
-        dropMaterial();
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.CompareTag("Bullet"))
         {
 
