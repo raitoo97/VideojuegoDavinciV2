@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private void OnMove()
     {
         if (stunned) return;
-        movVector = InputMannager.instance.GetMovementPj();
+        movVector = InputManager.instance.GetMovementPj();
         if (movVector == null) return;
         movVector.Normalize();
         rb?.MovePosition(rb.position + movVector * Time.fixedDeltaTime * movementVelocity);

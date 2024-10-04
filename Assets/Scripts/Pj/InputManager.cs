@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-public class InputMannager : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
-    public static InputMannager instance;
+    public static InputManager instance;
     private PlayerControllerInputs playerControllerInputs;
     public Action interactAction;
     private void Awake()
