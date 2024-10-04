@@ -6,12 +6,13 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
-    public int damage = 10;
-    public int speed = 3;
-    public GameObject materialPrefab;
+    [SerializeField] int damage = 10;
+    [SerializeField] int speed = 3;
     [SerializeField] float chaseDistance = 5.5f;
+    [SerializeField] float knockback = 17.2f;
     bool canMove;
     GameObject player;
+    public GameObject materialPrefab;
 
     private void Start()
     {
@@ -20,19 +21,23 @@ public class EnemyBehavior : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) <= chaseDistance)
+        if (player != null)
         {
-            canMove = true;
-            transform.up = (player.transform.position - this.transform.position).normalized;
-        }
-        else
-        {
-            canMove= false;
-        }
+            if (Vector2.Distance(this.transform.position, player.transform.position) <= chaseDistance)
+            {
+                canMove = true;
+                transform.up = (player.transform.position - this.transform.position).normalized;
+            }
+            else
+            {
+                canMove= false;
+            }
 
-        if (canMove) 
-        {
-            rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
+            if (canMove) 
+            {
+                rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
+            }
+            
         }
     }
 
@@ -41,9 +46,11 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (playerHealth != null) 
             {
                 playerHealth.TakeDamage(damage);
+                player.TakeKnockback(transform.up * knockback);
             }
         }
 
