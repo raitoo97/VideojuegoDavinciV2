@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public HealthBar healtBar;
     //Variables de Vida mavima y actual
     public int maxHealth = 100;
     public int currentHealth;
-
     //Variables para el color de danio
     SpriteRenderer spriteRenderer;
     Color originalPlayerColor;
-
-    public HealthBar healthBar; //variable para la barra de vida
-
-
     void Start()
     {
         //Actualizo vida actual con vida maxima
         currentHealth = maxHealth;
-        healthBar.SetmaxHealth(maxHealth); //pasa la vida maxima a la barra de vida al iniciar
-
+        healtBar.SetmaxHealth(maxHealth);
         //Guardo el componente del sprite del jugador en la variable
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
@@ -29,7 +24,6 @@ public class Health : MonoBehaviour
             originalPlayerColor = spriteRenderer.color;
         }
         
-
     }
 
     public void TakeDamage(int damage)
@@ -38,13 +32,12 @@ public class Health : MonoBehaviour
 
         //Corrutina que me ayuda a esperar x cantidad de tiempo para cambiar de un color a otro
         StartCoroutine(ChangeColorOnDamage());
-
+        healtBar.SetHealth(currentHealth);
         if (currentHealth<=0)
         {
             Die();
         }
 
-        healthBar.SetHealth(currentHealth); //le paso la vida actual a la barra de vida
     }
 
     /*#region 
@@ -82,5 +75,6 @@ public class Health : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
    
 }
