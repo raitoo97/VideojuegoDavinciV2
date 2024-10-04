@@ -9,11 +9,18 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifetime);
-
     }
 
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
+    }
+
+private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

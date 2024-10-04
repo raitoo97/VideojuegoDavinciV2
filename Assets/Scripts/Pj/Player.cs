@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
-    public int material = 0;
-    private void Start()
+
+    public int materialCount = 0;
+    void Start()
+
     {
         InputMannager.instance.interactAction += Shoot;
     }
@@ -30,9 +32,9 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("material"))
+        if (collision.CompareTag("Material"))
         {
-            material++;
+            materialCount++;
         }
     }
 }
