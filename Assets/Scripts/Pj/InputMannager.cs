@@ -31,6 +31,7 @@ public class InputMannager : MonoBehaviour
     private void Shoot_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         interactAction?.Invoke();
+        print("Hola soy la funcion de performed");
     }
     public Vector2 GetMovementPj()
     {
