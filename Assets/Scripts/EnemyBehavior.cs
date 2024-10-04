@@ -7,9 +7,9 @@ public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] int damage = 10;
-    [SerializeField] int speed = 3;
+    [SerializeField] int speed = 9;
     [SerializeField] float chaseDistance = 5.5f;
-    [SerializeField] float knockback = 17.2f;
+    [SerializeField] float knockback = 5.2f;
     bool canMove;
     GameObject player;
     public GameObject materialPrefab;
@@ -43,6 +43,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy")) return;
         if (collision.gameObject.CompareTag("Player"))
         {
             Health playerHealth = collision.gameObject.GetComponent<Health>();
@@ -53,15 +54,11 @@ public class EnemyBehavior : MonoBehaviour
                 player.TakeKnockback(transform.up * knockback);
             }
         }
-
-        
-
-        dropMaterial();
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.CompareTag("Bullet"))
         {
 
