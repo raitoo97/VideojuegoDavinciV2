@@ -7,9 +7,9 @@ public class EnemyBehavior : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] int damage = 10;
-    [SerializeField] int speed = 3;
+    [SerializeField] int speed = 9;
     [SerializeField] float chaseDistance = 5.5f;
-    [SerializeField] float knockback = 17.2f;
+    [SerializeField] float knockback = 5.2f;
     bool canMove;
     GameObject player;
     public GameObject materialPrefab;
