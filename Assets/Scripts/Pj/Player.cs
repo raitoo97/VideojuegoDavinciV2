@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     void Start()
 
     {
-        InputMannager.instance.interactAction += Shoot;
+        InputManager.instance.interactAction += Shoot;
     }
     void Update()
     {
