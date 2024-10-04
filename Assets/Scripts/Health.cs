@@ -12,12 +12,14 @@ public class Health : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Color originalPlayerColor;
 
-    
+    public HealthBar healthBar; //variable para la barra de vida
+
 
     void Start()
     {
         //Actualizo vida actual con vida maxima
         currentHealth = maxHealth;
+        healthBar.SetmaxHealth(maxHealth); //pasa la vida maxima a la barra de vida al iniciar
 
         //Guardo el componente del sprite del jugador en la variable
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,6 +29,7 @@ public class Health : MonoBehaviour
             originalPlayerColor = spriteRenderer.color;
         }
         
+
     }
 
     public void TakeDamage(int damage)
@@ -41,6 +44,7 @@ public class Health : MonoBehaviour
             Die();
         }
 
+        healthBar.SetHealth(currentHealth); //le paso la vida actual a la barra de vida
     }
 
     /*#region 
