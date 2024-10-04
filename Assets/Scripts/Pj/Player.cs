@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
+    public int material = 0;
     void Start()
     {
 
@@ -36,4 +37,14 @@ public class Player : MonoBehaviour
         bullet.transform.position = bulletSpawn.position;
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("material"))
+        {
+            material++;
+           
+        }
+    }
+
 }
