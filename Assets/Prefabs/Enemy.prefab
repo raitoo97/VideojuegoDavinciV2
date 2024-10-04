@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6080011728575426701}
   - component: {fileID: 3130519290081265742}
   - component: {fileID: 2684029117535069369}
-  m_Layer: 0
+  - component: {fileID: 5845125394602404}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,3 +135,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialPrefab: {fileID: 3679782927192176662, guid: 0f7545a809ca4a14f95ca7e095aed5f9, type: 3}
+--- !u!50 &5845125394602404
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792964858320019244}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
