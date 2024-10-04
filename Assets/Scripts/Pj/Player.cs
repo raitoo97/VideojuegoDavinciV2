@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
     public int materialCount = 0;
-    public bool megaShoot = false;
     void Start()
     {
 
@@ -20,19 +19,10 @@ public class Player : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 fixedMousepos = new Vector3(mousePos.x, mousePos.y, 0);
         target.transform.position = fixedMousepos;
-       /* if (materialCount == 5)//para habilitar un disparo + potente
-        {
-            megaShoot = true;
-        }
-        else
-        {
-            megaShoot = false;
-        }*/
-
 
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot(megaShoot);
+            Shoot();
         }
     }
 
@@ -41,14 +31,9 @@ public class Player : MonoBehaviour
         transform.up = (target.transform.position - transform.position).normalized;
     }
 
-    void Shoot(bool shoot)
+    void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab);
-     /*   if (shoot == true)
-        {
-            //bullet;
-
-        }*/
         bullet.transform.position = bulletSpawn.position;
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
     }
@@ -58,10 +43,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Material"))
         {
             materialCount++;
-           
         }
     }
-
-   
 
 }
