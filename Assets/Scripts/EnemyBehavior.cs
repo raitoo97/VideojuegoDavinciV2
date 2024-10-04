@@ -5,17 +5,35 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    int damage = 10;
+    Rigidbody2D rb;
+    public int damage = 10;
+    public int speed = 3;
     public GameObject materialPrefab;
-    void Start()
-    {
-        
-    }
+    [SerializeField] float chaseDistance = 5.5f;
+    bool canMove;
+    GameObject player;
 
-    
-    void Update()
+    private void Start()
     {
-        
+        player = GameManager.instance.player;
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void FixedUpdate()
+    {
+        if (Vector2.Distance(this.transform.position, player.transform.position) <= chaseDistance)
+        {
+            canMove = true;
+            transform.up = (player.transform.position - this.transform.position).normalized;
+        }
+        else
+        {
+            canMove= false;
+        }
+
+        if (canMove) 
+        {
+            rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -26,9 +26,12 @@ public class Player : MonoBehaviour
     }
     void Shoot()
     {
+        if (this != null)
+        {
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = bulletSpawn.position;
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
