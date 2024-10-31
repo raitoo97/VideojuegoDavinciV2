@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
-
-    public int materialCount = 0;
     void Start()
 
     {
@@ -32,16 +29,6 @@ public class Player : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = bulletSpawn.position;
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
-        }
-    }
-
-    
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Material"))
-        {
-            materialCount++;
         }
     }
 }
