@@ -25,6 +25,7 @@ public class SpawnEnemies : MonoBehaviour
     void Update()
     {
         // Verificar si el jugador está en rango
+        if (player == null) return;
         if (Vector2.Distance(transform.position, player.position) <= distance)
         {
             onRange = true;

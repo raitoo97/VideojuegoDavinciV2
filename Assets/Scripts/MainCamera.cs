@@ -8,11 +8,12 @@ public class MainCamera : MonoBehaviour
     Vector3 vectorPj;
     void Update()
     {
-        if(GameManager.instance.player.gameObject != null)
+        if(GameManager.instance.player.gameObject != null) 
         {
             playerPosition = GameManager.instance.player.transform;
-            vectorPj = new Vector3(playerPosition.position.x, playerPosition.position.y, -200);
         }
+        if (playerPosition == null) return;
+        vectorPj = new Vector3(playerPosition.position.x, playerPosition.position.y, -200);
     }
     private void LateUpdate()
     {
