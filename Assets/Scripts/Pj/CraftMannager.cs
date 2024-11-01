@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 public class CraftMannager : MonoBehaviour
 {
@@ -7,17 +8,17 @@ public class CraftMannager : MonoBehaviour
     [SerializeField] public int countOilToBomb;
     [SerializeField] public int countbloodToBomb;
     [SerializeField] public int countfireToBomb;
-    public int bombs;
+    public List<int> bombs;
     //Potas
     [SerializeField] public int countOilToHealthPotion;
     [SerializeField] public int countBloodToHealthPotion;
     [SerializeField] public int countFireToHealthPotion;
-    public int healtPotion;
+    public List <int> healthPotions;
     //ShieldPotion
     [SerializeField] public int countOilToShieldPotion;
     [SerializeField] public int countBloodToShieldPotion;
     [SerializeField] public int countFireToHShieldPotion;
-    public int shieldPotion;
+    public List<int> shieldPotions;
     private void Awake()
     {
         if (instance == null)
@@ -28,6 +29,9 @@ public class CraftMannager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        bombs = new List<int>();
+        healthPotions = new List<int>();
+        shieldPotions = new List<int>();
     }
     private void Start()
     {
@@ -55,8 +59,8 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef.GetOilCount() >= countOilToBomb && inventoryRef.GetBloodCount() >= countbloodToBomb && inventoryRef.GetFireCount() >= countfireToBomb)
         {
             print("Felicitaciones por despercidar el tiempo haciendo esta bomba de mierda:");
-            bombs++;
-            print($"Bombas Creadas: {bombs}");
+            bombs.Add(1);
+            print($"Bombas Creadas: {bombs.Count}");
             inventoryRef.RemoveOil(countOilToBomb);
             inventoryRef.RemoveBlood(countbloodToBomb);
             inventoryRef.RemoveFire(countfireToBomb);
@@ -75,8 +79,8 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef.GetOilCount() >= countOilToHealthPotion && inventoryRef.GetBloodCount() >= countBloodToHealthPotion && inventoryRef.GetFireCount() >= countFireToHealthPotion)
         {
             print("Felicitaciones por despercidar el tiempo haciendo esta pocion de mierda:");
-            healtPotion++;
-            print($"Pociones Creadas: {healtPotion}");
+            healthPotions.Add(1);
+            print($"Pociones Creadas: {healthPotions.Count}");
             inventoryRef.RemoveOil(countOilToHealthPotion);
             inventoryRef.RemoveBlood(countBloodToHealthPotion);
             inventoryRef.RemoveFire(countFireToHealthPotion);
@@ -95,8 +99,8 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef.GetOilCount() >= countOilToShieldPotion && inventoryRef.GetBloodCount() >= countBloodToShieldPotion && inventoryRef.GetFireCount() >= countFireToHShieldPotion)
         {
             print("Felicitaciones por despercidar el tiempo haciendo este escudo de mierda:");
-            shieldPotion++;
-            print($"escudos Creados: {shieldPotion}");
+            shieldPotions.Add(1);
+            print($"escudos Creados: {shieldPotions.Count}");
             inventoryRef.RemoveOil(countOilToShieldPotion);
             inventoryRef.RemoveBlood(countBloodToShieldPotion);
             inventoryRef.RemoveFire(countFireToHShieldPotion);
@@ -113,13 +117,13 @@ public class CraftMannager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            print($"usted tiene {bombs} bombas.");
-            print($"usted tiene {healtPotion} Pociones de salud.");
-            print($"usted tiene {shieldPotion} Pociones de escudo.");
+            print($"usted tiene {bombs.Count} bombas.");
+            print($"usted tiene {healthPotions.Count} Pociones de salud.");
+            print($"usted tiene {shieldPotions.Count} Pociones de escudo.");
         }
     }
     //GettersRapidos
-    public int GETBOMBS{get => bombs;}
-    public int GETPOTION{get => healtPotion;}
-    public int GETSHIELDS{get => shieldPotion;}
+    public int GETBOMBS{get => bombs.Count; }
+    public int GETPOTION{get => healthPotions.Count; }
+    public int GETSHIELDS{get => shieldPotions.Count; }
 }
