@@ -1,26 +1,34 @@
 using UnityEngine;
-using UnityEngine.UI;
 public class CraftMannager : MonoBehaviour
 {
     private Inventory inventoryRef;
+    public static CraftMannager instance;
     //Bombas
-    public Button craftBomb;
     [SerializeField] public int countOilToBomb;
     [SerializeField] public int countbloodToBomb;
     [SerializeField] public int countfireToBomb;
     public int bombs;
     //Potas
-    public Button craftHealthPotion;
     [SerializeField] public int countOilToHealthPotion;
     [SerializeField] public int countBloodToHealthPotion;
     [SerializeField] public int countFireToHealthPotion;
     public int healtPotion;
     //ShieldPotion
-    public Button craftShieldPotion;
     [SerializeField] public int countOilToShieldPotion;
     [SerializeField] public int countBloodToShieldPotion;
     [SerializeField] public int countFireToHShieldPotion;
     public int shieldPotion;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start()
     {
         inventoryRef = Inventory.instance;
@@ -36,10 +44,6 @@ public class CraftMannager : MonoBehaviour
         countOilToShieldPotion = 50;
         countBloodToShieldPotion = 0;
         countFireToHShieldPotion = 100;
-        //Botones
-        craftBomb.onClick.AddListener(CraftBomb);
-        craftHealthPotion.onClick.AddListener(CraftHealthPotion);
-        craftShieldPotion.onClick.AddListener(CraftShieldPotion);
     }
     private void Update()
     {
@@ -105,7 +109,7 @@ public class CraftMannager : MonoBehaviour
             print($"Fuego requerido {countFireToHShieldPotion} / Disponible : {inventoryRef.GetFireCount()}");
         }
     }
-    public void GetItems()
+    private void GetItems()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -114,4 +118,8 @@ public class CraftMannager : MonoBehaviour
             print($"usted tiene {shieldPotion} Pociones de escudo.");
         }
     }
+    //GettersRapidos
+    public int GETBOMBS{get => bombs;}
+    public int GETPOTION{get => healtPotion;}
+    public int GETSHIELDS{get => shieldPotion;}
 }
