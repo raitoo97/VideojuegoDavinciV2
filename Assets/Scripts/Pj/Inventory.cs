@@ -1,59 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class Inventory : MonoBehaviour
 {
-    public static Inventory Instance;
+    public static Inventory instance;
     public List<int> oil;
     public List<int> blood;
     public List<int> fire;
-    public Button craftBomb;
-    [SerializeField]public int CountOilToBomb;
-    [SerializeField]public int CountbloodToBomb;
-    [SerializeField]public int CountfireToBomb;
-    private void Start()
-    {
-        CountOilToBomb = 5;
-        CountbloodToBomb = 10;
-        CountfireToBomb = 8;
-        craftBomb.onClick.AddListener(CraftBomb);
-    }
-    public void CraftBomb()
-    {
-        if (GetOilCount() >= CountOilToBomb && GetBloodCount() >= CountbloodToBomb && GetFireCount() >= CountfireToBomb)
-        {
-            print("Felicitaciones por despercidar el tiempo haicnedo esta bomba de mierda:");
-            RemoveOil(CountOilToBomb);
-            RemoveBlood(CountbloodToBomb);
-            RemoveFire(CountfireToBomb);
-        }
-        else
-        {
-            print("Materiales insuficientes");
-            print($"Aceite requerido {CountOilToBomb} / Disponible : {GetOilCount()}");
-            print($"Sangre requerida {CountbloodToBomb} / Disponible : {GetBloodCount()}");
-            print($"Fuego requerido {CountfireToBomb} / Disponible : {GetFireCount()}");
-        }
-    }
-    public int GetBloodCount()
-    {
-        return blood.Count;
-    }
-    public int GetOilCount()
-    {
-        return oil.Count;
-    }
-    public int GetFireCount()
-    {
-        return fire.Count;
-    }
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
         }
         else
         {
@@ -63,10 +20,33 @@ public class Inventory : MonoBehaviour
         blood = new List<int>();
         fire = new List<int>();
     }
-
     private void Update()
     {
         PruebaItemsAdd();
+    }
+    public void PruebaItemsAdd()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            AddOil();
+            AddBlood();
+            AddFire();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            print($"Total Aceite: {GetOilCount()}");
+            print($"Total sangre: {GetBloodCount()}");
+            print($"Total Fuego: {GetFireCount()}");
+        }
+    }
+    public void AddOil()
+    {
+        int count = Random.Range(1, 4);
+        for (int i = 0; i < count; i++)
+        {
+            oil.Add(count);
+        }
+        print($"Conseguiste {count} de Aceite");
     }
     public void AddBlood()
     {
@@ -85,15 +65,6 @@ public class Inventory : MonoBehaviour
             fire.Add(count);
         }
         print($"Conseguiste {count} de Fuego");
-    }
-    public void AddOil()
-    {
-        int count = Random.Range(1, 4);
-        for (int i = 0; i < count; i++)
-        {
-            oil.Add(count);
-        }
-        print($"Conseguiste {count} de Aceite");
     }
     public int RemoveOil(int necessaryAmount)
     {
@@ -146,20 +117,17 @@ public class Inventory : MonoBehaviour
             return 0;
         }
     }
-    public void PruebaItemsAdd()
+    public int GetOilCount()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            AddBlood();
-            AddFire();
-            AddOil();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            print($"Total sangre: {GetBloodCount()}");
-            print($"Total Fuego: {GetFireCount()}");
-            print($"Total Aceite: {GetOilCount()}");
-        }
+        return oil.Count;
+    }
+    public int GetBloodCount()
+    {
+        return blood.Count;
+    }
+    public int GetFireCount()
+    {
+        return fire.Count;
     }
     //ESTA FUNCION EN EL FUTURO REEMPLAZA LAS TRES DE ADDX ME QUEDO UN XD TRISTE PERO NO ERA LA INTENCION SIU.
     //private void OnTriggerEnter2D(Collider2D collision)

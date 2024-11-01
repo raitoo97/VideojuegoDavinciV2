@@ -4,12 +4,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 movVector = Vector2.zero;
     private int movementVelocity;
     private Rigidbody2D rb;
-
     //Timer
     [SerializeField] float stunTime;
     float stunTimer;
     public bool stunned;
-
     private void Start()
     {
         movementVelocity = 10;
@@ -51,14 +49,12 @@ public class PlayerController : MonoBehaviour
             AnimationController.Instance.ChangeAnimation(POSITION.LEFT);
         }
     }
-
     public void TakeKnockback(Vector2 kb)
     {
         if (stunned) return;
         stunned = true;
         rb.AddForce(kb, ForceMode2D.Impulse);
     }
-
     #region Cooldown
     void stunCooldown()
     {
