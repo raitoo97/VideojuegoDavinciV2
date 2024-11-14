@@ -58,7 +58,6 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef == null) return;
         if (inventoryRef.GetOilCount() >= countOilToBomb && inventoryRef.GetBloodCount() >= countbloodToBomb && inventoryRef.GetFireCount() >= countfireToBomb)
         {
-            print("Felicitaciones por despercidar el tiempo haciendo esta bomba de mierda:");
             bombs.Add(1);
             print($"Bombas Creadas: {bombs.Count}");
             inventoryRef.RemoveOil(countOilToBomb);
@@ -78,7 +77,6 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef == null) return;
         if (inventoryRef.GetOilCount() >= countOilToHealthPotion && inventoryRef.GetBloodCount() >= countBloodToHealthPotion && inventoryRef.GetFireCount() >= countFireToHealthPotion)
         {
-            print("Felicitaciones por despercidar el tiempo haciendo esta pocion de mierda:");
             healthPotions.Add(1);
             print($"Pociones Creadas: {healthPotions.Count}");
             inventoryRef.RemoveOil(countOilToHealthPotion);
@@ -98,7 +96,6 @@ public class CraftMannager : MonoBehaviour
         if (inventoryRef == null) return;
         if (inventoryRef.GetOilCount() >= countOilToShieldPotion && inventoryRef.GetBloodCount() >= countBloodToShieldPotion && inventoryRef.GetFireCount() >= countFireToHShieldPotion)
         {
-            print("Felicitaciones por despercidar el tiempo haciendo este escudo de mierda:");
             shieldPotions.Add(1);
             print($"escudos Creados: {shieldPotions.Count}");
             inventoryRef.RemoveOil(countOilToShieldPotion);
