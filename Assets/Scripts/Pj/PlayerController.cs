@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        RotateSprite();
         stunCooldown();
     }
     private void OnMove()
@@ -29,25 +28,6 @@ public class PlayerController : MonoBehaviour
         if (movVector == null) return;
         movVector.Normalize();
         rb?.MovePosition(rb.position + movVector * Time.fixedDeltaTime * movementVelocity);
-    }
-    private void RotateSprite()
-    {
-        if (movVector.x == 0 && movVector.y == 1)
-        {
-            AnimationController.Instance.ChangeAnimation(POSITION.UP);
-        }
-        if (movVector.x == 0 && movVector.y == -1)
-        {
-            AnimationController.Instance.ChangeAnimation(POSITION.DOWN);
-        }
-        if (movVector.x == 1 && movVector.y == 0)
-        {
-            AnimationController.Instance.ChangeAnimation(POSITION.RIGHT);
-        }
-        if (movVector.x == -1 && movVector.y == 0)
-        {
-            AnimationController.Instance.ChangeAnimation(POSITION.LEFT);
-        }
     }
     public void TakeKnockback(Vector2 kb)
     {
