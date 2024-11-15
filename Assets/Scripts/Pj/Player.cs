@@ -14,17 +14,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("DirX");
+        /*movement.x = Input.GetAxisRaw("DirX");
         movement.y = Input.GetAxisRaw("DirY");
 
         animator.SetFloat("DirX", movement.x);
         animator.SetFloat("DirY", movement.y);
-        animator.SetFloat("speed", movement.sqrMagnitude);
+        animator.SetFloat("speed", movement.sqrMagnitude);*/
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+       // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
 }
