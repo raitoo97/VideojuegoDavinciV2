@@ -10,36 +10,33 @@ public class Material : MonoBehaviour
 {
     public enum MATERIALS
     {
-        WATER, OIL, METAL, ACID
+        BLOOD, OIL, FIRE
     }
 
+    public MATERIALS materialType;
     SpriteRenderer materialRenderer;
-
     public Sprite defaultSprite;
 
-    public void OnCreatedMaterial(int type)
+    public void OnCreatedMaterial(MATERIALS type)
     {
+        materialType = type;
         materialRenderer = GetComponent<SpriteRenderer>();
         if (materialRenderer != null)
         {
             materialRenderer.sprite = defaultSprite;
 
-            switch (type)
+            switch (materialType)
             {
-                case 1:
-                    materialRenderer.color = Color.blue;
+                case MATERIALS.BLOOD:
+                    materialRenderer.color = Color.red;
                     
                     break;
-                case 2:
+                case MATERIALS.OIL:
                     materialRenderer.color = Color.black;                  
                     
                     break;
-                case 3:
-                    materialRenderer.color = Color.cyan;                   
-                    
-                    break;
-                case 4:
-                    materialRenderer.color = Color.green;                    
+                case MATERIALS.FIRE:
+                    materialRenderer.color = Color.blue;                                     
                     
                     break;
                 default:
@@ -53,6 +50,7 @@ public class Material : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Inventory.instance.AddMaterial(materialType);
             Destroy(gameObject);
         }
     }

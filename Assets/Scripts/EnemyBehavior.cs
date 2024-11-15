@@ -68,7 +68,8 @@ public class EnemyBehavior : MonoBehaviour
     }
     void dropMaterial()
     {
-        int randomInt = Random.Range(1, 5);
+        //Numero aleatorio a partir de la lista Enum 
+        int randomType = Random.Range(0, System.Enum.GetValues(typeof(Material.MATERIALS)).Length);
 
         // Instancia el prefab "Material" en el lugar donde el enemigo muere
         GameObject materialObject = Instantiate(materialPrefab, transform.position, Quaternion.identity);
@@ -78,7 +79,8 @@ public class EnemyBehavior : MonoBehaviour
 
         if (materialDropped != null)
         {
-            materialDropped.OnCreatedMaterial(randomInt);
+            materialDropped.OnCreatedMaterial((Material.MATERIALS)randomType);
+            
         }
     }
 }
