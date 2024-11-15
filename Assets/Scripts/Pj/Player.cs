@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] GameObject target;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform bulletSpawn;
-    void Start()
 
-    {
-        InputManager.instance.interactAction += Shoot;
-    }
+    public float moveSpeed =1f;
+
+    Rigidbody2D rb;
+    Animator animator;
+
+    Vector2 movement;
+
     void Update()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 fixedMousepos = new Vector3(mousePos.x, mousePos.y, 0);
-        target.transform.position = fixedMousepos;
+        movement.x = Input.GetAxisRaw("DirX");
+        movement.y = Input.GetAxisRaw("DirY");
+
+        animator.SetFloat("DirX", movement.x);
+        animator.SetFloat("DirY", movement.y);
+        animator.SetFloat("speed", movement.sqrMagnitude);
     }
+
     void FixedUpdate()
     {
-        transform.up = (target.transform.position - transform.position).normalized;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-    void Shoot()
-    {
-        if (this != null)
-        {
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = bulletSpawn.position;
-        bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
-        }
-    }
+
 }
