@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-public class InputMannager : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
-    public static InputMannager instance;
+    public static InputManager instance;
     private PlayerControllerInputs playerControllerInputs;
     public Action interactAction;
     private void Awake()
@@ -31,7 +31,6 @@ public class InputMannager : MonoBehaviour
     private void Shoot_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         interactAction?.Invoke();
-        print("Hola soy la funcion de performed");
     }
     public Vector2 GetMovementPj()
     {
