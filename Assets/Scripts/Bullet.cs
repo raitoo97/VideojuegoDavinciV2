@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float lifetime;
     void Start()
     {
-        Destroy(gameObject, lifetime);
+      //  Destroy(gameObject, lifetime);
     }
 
     void Update()
@@ -20,7 +20,7 @@ private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+          //  Destroy(gameObject);
         }
     }
 }
