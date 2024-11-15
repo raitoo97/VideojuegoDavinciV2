@@ -7,8 +7,16 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
-    void Start()
 
+    //SOUND
+    private AudioSource audioSource;
+    public AudioClip sfxShoot;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void Start()
     {
         InputManager.instance.interactAction += Shoot;
     }
@@ -26,6 +34,7 @@ public class Player : MonoBehaviour
     {
         if (this != null)
         {
+            audioSource.PlayOneShot(sfxShoot);
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.transform.position = bulletSpawn.position;
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
