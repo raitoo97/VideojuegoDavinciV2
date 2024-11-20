@@ -6104,7 +6104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 370409008}
   bulletPrefab: {fileID: 219784730261585223, guid: 4c4e3475996115449a1165d3f14e0bbc, type: 3}
-  bulletSpawn: {fileID: 2023390250}
+  bulletSpawn: {fileID: 1394961045}
   sfxShoot: {fileID: 8300000, guid: 0606a89edf19e3144b1f7b06e5782336, type: 3}
 --- !u!82 &2023390259
 AudioSource:
