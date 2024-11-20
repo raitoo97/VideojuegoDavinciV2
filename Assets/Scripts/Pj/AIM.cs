@@ -7,6 +7,7 @@ public class Aim : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
+    
 
     //SOUND
     private AudioSource audioSource;
@@ -19,6 +20,8 @@ public class Aim : MonoBehaviour
     void Start()
     {
         InputManager.instance.interactAction += Shoot;
+        
+
     }
     void Update()
     {
@@ -40,4 +43,6 @@ public class Aim : MonoBehaviour
         bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
         }
     }
+
+    
 }

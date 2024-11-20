@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb1eab42b6133a4f9b54349c1fe0e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 6704445603995871735, guid: 2e8520e1bccf38641974d1182663641a, type: 3}
+  bombSpawn: {fileID: 1394961045}
 --- !u!114 &80813727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,10 +6104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d648780d2160f2b4688201c6b1633e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 370409008}
   bulletPrefab: {fileID: 219784730261585223, guid: 4c4e3475996115449a1165d3f14e0bbc, type: 3}
   bulletSpawn: {fileID: 1394961045}
-  sfxShoot: {fileID: 0}
+  sfxShoot: {fileID: 8300000, guid: 0606a89edf19e3144b1f7b06e5782336, type: 3}
 --- !u!82 &2023390259
 AudioSource:
   m_ObjectHideFlags: 0
