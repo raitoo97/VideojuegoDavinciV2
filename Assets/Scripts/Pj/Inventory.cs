@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
     public List<int> oil;
     public List<int> blood;
     public List<int> fire;
+
+    
     private void Awake()
     {
         if (instance == null)
@@ -22,8 +24,37 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
-        PruebaItemsAdd();
+        //PruebaItemsAdd();
     }
+
+    public void AddMaterial(Material.MATERIALS materialType) 
+    {
+        int materialCount = Random.Range(10, 50);
+        switch (materialType)
+        {
+            case Material.MATERIALS.BLOOD:
+                for (int i = 0; i < materialCount; i++)
+                {
+                    blood.Add(1);
+                }
+                break;
+            case Material.MATERIALS.OIL:
+                for (int i = 0; i < materialCount; i++)
+                {
+                    oil.Add(1);
+                }
+                break;
+            case Material.MATERIALS.FIRE:
+                for (int i = 0; i < materialCount; i++)
+                {
+                    fire.Add(1);
+                }
+                break;
+        }
+    }
+
+
+    /*
     public void PruebaItemsAdd()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -66,6 +97,7 @@ public class Inventory : MonoBehaviour
         }
         print($"Conseguiste {count} de Fuego");
     }
+    */
     public int RemoveOil(int necessaryAmount)
     {
         if(oil.Count >= necessaryAmount)
@@ -129,6 +161,8 @@ public class Inventory : MonoBehaviour
     {
         return fire.Count;
     }
+
+
     //ESTA FUNCION EN EL FUTURO REEMPLAZA LAS TRES DE ADDX ME QUEDO UN XD TRISTE PERO NO ERA LA INTENCION SIU.
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
