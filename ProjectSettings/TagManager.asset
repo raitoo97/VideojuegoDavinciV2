@@ -9,7 +9,7 @@ TagManager:
   - Enemy
   - Teleporter1
   - Teleporter2
-  - Wall
+  - Aim
   layers:
   - Default
   - TransparentFX
