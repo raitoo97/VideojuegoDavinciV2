@@ -27,7 +27,6 @@ public class aim : MonoBehaviour
         if (this != null)
         {
             GameObject bullet = Instantiate(bulletPrefab);
-            bulletSpawn.transform.position = target.transform.position;
             bullet.transform.position = bulletSpawn.position;
             bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
         }
