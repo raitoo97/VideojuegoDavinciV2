@@ -11,6 +11,7 @@ TagManager:
   - Teleporter2
   - Aim
   - Bomb
+  - Wall
   layers:
   - Default
   - TransparentFX

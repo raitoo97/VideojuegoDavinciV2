@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class MainCamera : MonoBehaviour
 {
     Transform playerPosition;
@@ -13,7 +10,8 @@ public class MainCamera : MonoBehaviour
             playerPosition = GameManager.instance.player.transform;
         }
         if (playerPosition == null) return;
-        vectorPj = new Vector3(playerPosition.position.x, playerPosition.position.y, -200);
+        vectorPj = new Vector3(playerPosition.position.x, playerPosition.position.y, -1);
+        Camera.main.orthographicSize = 5;
     }
     private void LateUpdate()
     {
