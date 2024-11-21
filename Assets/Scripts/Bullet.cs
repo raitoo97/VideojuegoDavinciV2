@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, lifetime);
+        //  Destroy(gameObject, lifetime);
     }
 
     void Update()
