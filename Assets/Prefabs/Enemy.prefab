@@ -138,7 +138,7 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 6477311140757537287, guid: acf1a88c4817a4a409767be220501e15, type: 3}
   hitPoints: 100
   damage: 10
-  speed: 14
+  speed: 3
   chaseDistance: 10.5
   knockback: 3.3
   materialPrefab: {fileID: 3679782927192176662, guid: 0f7545a809ca4a14f95ca7e095aed5f9, type: 3}
