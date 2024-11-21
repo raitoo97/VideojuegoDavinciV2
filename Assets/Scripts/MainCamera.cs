@@ -8,7 +8,7 @@ public class MainCamera : MonoBehaviour
     Vector3 vectorPj;
     void Update()
     {
-        if(GameManager.instance.player.gameObject != null) 
+        if (GameManager.instance.player.gameObject != null) 
         {
             playerPosition = GameManager.instance.player.transform;
         }

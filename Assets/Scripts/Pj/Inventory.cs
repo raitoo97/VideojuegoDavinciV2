@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    /*
+
     public void PruebaItemsAdd()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -97,7 +97,7 @@ public class Inventory : MonoBehaviour
         }
         print($"Conseguiste {count} de Fuego");
     }
-    */
+
     public int RemoveOil(int necessaryAmount)
     {
         if(oil.Count >= necessaryAmount)
