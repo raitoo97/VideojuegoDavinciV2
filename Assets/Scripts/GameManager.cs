@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject player;
     public GameObject spawn;
+    public Canvas uiCanvas; // Referencia al Canvas UI
     private void Awake()
     {
         if (instance == null)
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("GameManager destruido");
         }
     }
 
@@ -25,13 +27,14 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         spawn = GameObject.FindFirstObjectByType<SpawnEnemies>().gameObject;
+        
     }
 
     private void Update()
     {
         if (spawn == null)
         {
-            print("GANASTE EL JUEGO!!");
+           print("GANASTE EL JUEGO!!");
         }
     }
 }
