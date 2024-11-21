@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb1eab42b6133a4f9b54349c1fe0e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 6704445603995871735, guid: 2e8520e1bccf38641974d1182663641a, type: 3}
+  bombSpawn: {fileID: 1394961045}
 --- !u!114 &80813727
 MonoBehaviour:
   m_ObjectHideFlags: 0
