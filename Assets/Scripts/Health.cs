@@ -25,7 +25,10 @@ public class Health : MonoBehaviour
         }
         
     }
-
+    private void Update()
+    {
+        print(currentHealth);
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

@@ -105,7 +105,7 @@ public partial class @PlayerControllerInputs: IInputActionCollection2, IDisposab
                 {
                     ""name"": """",
                     ""id"": ""944d732d-6be9-4fa2-afaf-7602d0b69712"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
