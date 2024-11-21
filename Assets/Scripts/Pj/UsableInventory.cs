@@ -39,11 +39,16 @@ public class UsableInventory : MonoBehaviour
         {
             //creo la bomba
             GameObject bomb = Instantiate(bombPrefab, bombSpawn.position, Quaternion.identity);
-
+            
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
             Vector3 direction = (mouseWorldPos - bombSpawn.position).normalized;
             bomb.transform.up = direction;
+            Bomb bombScript = bomb.GetComponent<Bomb>();
+            if (bombScript != null)
+            {
+                bombScript.DetonateBomb();
+            }
         }
     }
 
