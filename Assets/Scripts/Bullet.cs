@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float lifetime;
     void Start()
     {
-      //  Destroy(gameObject, lifetime);
+        //  Destroy(gameObject, lifetime);
     }
 
     void Update()
