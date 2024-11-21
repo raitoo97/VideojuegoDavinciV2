@@ -27,7 +27,7 @@ public class EnemyBehavior : MonoBehaviour
     private void Start()
     {
         //UI Barra de Vida
-        healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+        healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         healthBar = healthBarInstance.GetComponent<EnemyHealthBar>();
         healthBarInstance.transform.SetParent(GameManager.instance.uiCanvas.transform, false); // Si usas un canvas central
 
@@ -37,15 +37,21 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (hitPoints<=0)
+        if (hitPoints <= 0)
         {
-            Destroy(healthBarInstance);
-            Destroy(gameObject);
+            if (healthBarInstance != null) // Asegúrate de que healthBarInstance exista antes de destruirlo
+            {
+                Destroy(healthBarInstance); // Destruye toda la instancia de la barra de vida
+            }
+            Destroy(gameObject); // Destruye el enemigo
         }
         else
         {
-            healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
-            healthBar.UpdateHealthBar(hitPoints, 100);
+            if (healthBarInstance != null) // Asegúrate de que healthBarInstance esté disponible
+            {
+                healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
+                healthBar.UpdateHealthBar(hitPoints, 100);
+            }
         }
     }
     private void FixedUpdate()
@@ -89,12 +95,15 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Bullet"))
         {
-
             dropMaterial();
-            Destroy(gameObject);
+
+            if (healthBarInstance != null)
+            {
+                Destroy(healthBarInstance); // Destruye la barra de vida
+            }
+            Destroy(gameObject); // Destruye el enemigo
         }
     }
     void dropMaterial()
