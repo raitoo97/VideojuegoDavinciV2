@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float lifetime;
     void Start()
     {
-      //  Destroy(gameObject, lifetime);
+        //  Destroy(gameObject, lifetime);
     }
 
     void Update()
@@ -20,8 +20,9 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy") || (collision.CompareTag("Wall")))
         {
-          //  Destroy(gameObject);
+            //  Destroy(gameObject);
         }
 
     }
+}
 
