@@ -10,6 +10,7 @@ TagManager:
   - Teleporter1
   - Teleporter2
   - Aim
+  - Bomb
   layers:
   - Default
   - TransparentFX

@@ -1,7 +1,11 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+
 public class UsableInventory : MonoBehaviour
 {
     private CraftMannager CraftRef;
+    [SerializeField] GameObject bombPrefab;
+    [SerializeField] Transform bombSpawn;
     private void Start()
     {
         CraftRef = CraftMannager.instance;
@@ -20,6 +24,7 @@ public class UsableInventory : MonoBehaviour
             if(CraftRef.bombs.Count > 0)
             {
                 CraftRef.bombs.RemoveAt(0);
+                ThrowBomb();
             }
             else
             {
@@ -27,6 +32,21 @@ public class UsableInventory : MonoBehaviour
             }
         }
     }
+
+    void ThrowBomb()
+    {
+        if (this != null)
+        {
+            //creo la bomba
+            GameObject bomb = Instantiate(bombPrefab, bombSpawn.position, Quaternion.identity);
+
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0;
+            Vector3 direction = (mouseWorldPos - bombSpawn.position).normalized;
+            bomb.transform.up = direction;
+        }
+    }
+
     public void UsePotion()
     {
         if (CraftRef == null) return;
