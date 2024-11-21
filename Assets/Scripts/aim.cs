@@ -7,6 +7,11 @@ public class aim : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletSpawn;
+    [SerializeField] private float coolDown;
+    private float nextShootTime;
+    public bool IsCoolingDown => Time.time < nextShootTime;
+    public int shoots = 6;
+
     void Start()
     {
         InputManager.instance.interactAction += Shoot;
@@ -22,14 +27,25 @@ public class aim : MonoBehaviour
     {
         transform.up = (target.transform.position - transform.position).normalized;
     }
+
     void Shoot()
     {
-        if (this != null)
+        if (IsCoolingDown == false)
         {
-            GameObject bullet = Instantiate(bulletPrefab);
-            bulletSpawn.transform.position = target.transform.position;
-            bullet.transform.position = bulletSpawn.position;
-            bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
+            if (this != null)
+            {
+                GameObject bullet = Instantiate(bulletPrefab);
+                bullet.transform.position = bulletSpawn.position;
+                bullet.transform.up = (target.transform.position - bulletSpawn.position).normalized;
+            }
+            shoots--;
+            if (shoots == 0)
+            {
+                nextShootTime = Time.time + coolDown;
+            }
         }
+                      
     }
+   
+
 }
