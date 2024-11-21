@@ -29,7 +29,7 @@ public class EnemyBehavior : MonoBehaviour
         //UI Barra de Vida
         healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 1.5f, Quaternion.identity);
         healthBar = healthBarInstance.GetComponent<EnemyHealthBar>();
-        healthBarInstance.transform.SetParent(GameManager.instance.uiCanvas.transform, false); // Si usas un canvas central
+       // healthBarInstance.transform.SetParent(GameManager.instance.uiCanvas.transform, false); // Si usas un canvas central
 
         player = GameManager.instance.player;
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +45,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
-            healthBar.UpdateHealthBar(hitPoints, 100);
+            //healthBar.UpdateHealthBar(hitPoints, 100);
         }
     }
     private void FixedUpdate()
