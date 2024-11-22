@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
-        //PruebaItemsAdd();
+        PruebaItemsAdd();
     }
 
     public void AddMaterial(Material.MATERIALS materialType) 

@@ -1027,7 +1027,7 @@ Transform:
   m_GameObject: {fileID: 55227407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.041, y: -12.153, z: 2.0364003}
+  m_LocalPosition: {x: -6.32, y: -38.813, z: 2.0364003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1619,7 +1619,7 @@ Transform:
   m_GameObject: {fileID: 80813724}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: -42.757, z: 0}
+  m_LocalPosition: {x: 0.321, y: -42.757, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6591,7 +6591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &256221130
 Transform:
   m_ObjectHideFlags: 0
@@ -29953,7 +29953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2023390246}
   spawn: {fileID: 0}
-  uiCanvas: {fileID: 0}
+  uiCanvas: {fileID: 643117553}
 --- !u!114 &1301948960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43998,6 +43998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2684029117535069369, guid: 70b4976a61582f14b8c062d0b4ad3eef, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3792964858320019244, guid: 70b4976a61582f14b8c062d0b4ad3eef, type: 3}
       propertyPath: m_Name
       value: Enemy (12)
@@ -46244,7 +46248,7 @@ Transform:
   m_GameObject: {fileID: 2023390246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.030000001, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
