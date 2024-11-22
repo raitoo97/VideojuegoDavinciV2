@@ -8,11 +8,18 @@ public class UsableInventory : MonoBehaviour
     [SerializeField] Transform bombSpawn;
     private Health healtRef;
     public int healtRestore;
+
+    private AudioSource audiosource;
+    [SerializeField] AudioClip usePotion;
+    [SerializeField] AudioClip useBomb;
+
     private void Start()
     {
         CraftRef = CraftMannager.instance;
         healtRef = GameObject.FindAnyObjectByType<Health>();
         healtRestore = 20;
+
+        audiosource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -49,6 +56,7 @@ public class UsableInventory : MonoBehaviour
             Bomb bombScript = bomb.GetComponent<Bomb>();
             if (bombScript != null)
             {
+                audiosource.PlayOneShot(useBomb);
                 bombScript.DetonateBomb();
             }
         }
@@ -60,6 +68,7 @@ public class UsableInventory : MonoBehaviour
         {
             if (CraftRef.healthPotions.Count > 0 && healtRef.currentHealth <=100)
             {
+                audiosource.PlayOneShot(usePotion);
                 healtRef.RestoreLife(healtRestore);
             }
             else
