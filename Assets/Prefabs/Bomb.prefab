@@ -164,7 +164,7 @@ MonoBehaviour:
   explosionTime: 3
   explosionEffect: {fileID: 5969469476931759485, guid: 7b11fecfcdfc3c14cb79d494bab953d1, type: 3}
   explosionRadius: 5
-  gasDamage: 50
+  gasDamage: 10
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -7,10 +7,8 @@ using UnityEngine.UI;
 public class EnemyBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject healthBarPrefab;
-    private GameObject healthBarInstance;
-    private EnemyHealthBar healthBar;
-
-    [SerializeField] float hitPoints = 100;
+    //private EnemyHealthBar healthBar;
+    [SerializeField] float hitPoints = 100f;
     [SerializeField] int damage = 10;
     [SerializeField] int speed = 9;
     [SerializeField] float chaseDistance = 5.5f;
@@ -19,44 +17,16 @@ public class EnemyBehavior : MonoBehaviour
     Rigidbody2D rb;
     bool canMove;
     GameObject player;
-
     //Variables para el veneno
     private bool isPoisoned = false;
-    private float poisonDuration = 0f;
-
+    private float poisonDuration = 5f;
     private void Start()
     {
-        //UI Barra de Vida
-        healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-        healthBar = healthBarInstance.GetComponent<EnemyHealthBar>();
-        healthBarInstance.transform.SetParent(GameManager.instance.uiCanvas.transform, false); // Si usas un canvas central
-
         player = GameManager.instance.player;
         rb = GetComponent<Rigidbody2D>();
     }
-
-    private void Update()
-    {
-        if (hitPoints <= 0)
-        {
-            if (healthBarInstance != null) // Asegúrate de que healthBarInstance exista antes de destruirlo
-            {
-                Destroy(healthBarInstance); // Destruye toda la instancia de la barra de vida
-            }
-            Destroy(gameObject); // Destruye el enemigo
-        }
-        else
-        {
-            if (healthBarInstance != null) // Asegúrate de que healthBarInstance esté disponible
-            {
-                healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
-                healthBar.UpdateHealthBar(hitPoints, 100);
-            }
-        }
-    }
     private void FixedUpdate()
     {
-        
         //Persigue al jugador
         if (player != null)
         {
@@ -77,7 +47,6 @@ public class EnemyBehavior : MonoBehaviour
             
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) return;
@@ -92,18 +61,11 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
             dropMaterial();
-
-            if (healthBarInstance != null)
-            {
-                Destroy(healthBarInstance); // Destruye la barra de vida
-            }
-            Destroy(gameObject); // Destruye el enemigo
         }
     }
     void dropMaterial()
@@ -120,27 +82,23 @@ public class EnemyBehavior : MonoBehaviour
         if (materialDropped != null)
         {
             materialDropped.OnCreatedMaterial((Material.MATERIALS)randomType);
-            
         }
     }
-
     public void TakeDamage(float damage)
     {
         hitPoints -= damage;
         return;
     }
-
     public void TakePoisonDamage(float poisonDamagePerSecond)
     {
         Debug.Log("TAKEPOISONDAMAGE()");
         if (!isPoisoned) // Solo iniciar si no está ya envenenado
         {
             isPoisoned = true;
-            poisonDuration = 3f; // Duración del veneno (puedes cambiar este valor o pasarlo como parámetro)
+            //poisonDuration = 3f; // Duración del veneno (puedes cambiar este valor o pasarlo como parámetro)
             StartCoroutine(ApplyPoisonOverTime(poisonDamagePerSecond));
         }
     }
-
     public IEnumerator ApplyPoisonOverTime(float poisonDamagePerSecond) 
     {
         float elapsedTime = 0f;
@@ -149,8 +107,9 @@ public class EnemyBehavior : MonoBehaviour
         {
             Debug.Log($"Recibi danio por {poisonDamagePerSecond}");
             hitPoints -= poisonDamagePerSecond;
-            elapsedTime += 1f;
             yield return new WaitForSeconds(1f);
+            print("elapsed time:" + elapsedTime);
+            elapsedTime += 1f;
         }
 
         isPoisoned = false;
