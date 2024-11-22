@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 41669429}
   - component: {fileID: 41669428}
   m_Layer: 6
-  m_Name: SpawnEnemies (1)
+  m_Name: SpawnEnemiesFinish
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5509,6 +5509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b0a4104bfdfa641acfeb4cc4e8a7e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Respawner: {fileID: 0}
 --- !u!61 &171578432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16609,7 +16610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fuegos:'
+  m_Text: 'Fuego:'
 --- !u!222 &882115043
 CanvasRenderer:
   m_ObjectHideFlags: 0
