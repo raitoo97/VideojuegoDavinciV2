@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6080011728575426701}
   - component: {fileID: 3130519290081265742}
   - component: {fileID: 2684029117535069369}
-  - component: {fileID: -408674497804040509}
   - component: {fileID: 5845125394602404}
   m_Layer: 7
   m_Name: Enemy
@@ -142,19 +141,6 @@ MonoBehaviour:
   chaseDistance: 10.5
   knockback: 3.3
   materialPrefab: {fileID: 3679782927192176662, guid: 0f7545a809ca4a14f95ca7e095aed5f9, type: 3}
---- !u!114 &-408674497804040509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3792964858320019244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a498f30994ec7468d810b24b114a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 6789999595201355765, guid: acf1a88c4817a4a409767be220501e15, type: 3}
 --- !u!50 &5845125394602404
 Rigidbody2D:
   serializedVersion: 4

@@ -49,7 +49,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             if (healthBarInstance != null) // Asegúrate de que healthBarInstance esté disponible
             {
-                healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 1.5f);
+                healthBarInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 0.5f);
                 healthBar.UpdateHealthBar(hitPoints, 100);
             }
         }
