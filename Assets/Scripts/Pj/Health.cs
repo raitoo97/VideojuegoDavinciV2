@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public HealthBar healtBar;
@@ -69,15 +68,13 @@ public class Health : MonoBehaviour
             spriteRenderer.color = originalPlayerColor;
         }
     }
-
     private void Die()
     {
         Debug.Log("THE PLAYER HAS DIED");
         if (gameObject != null)
         {
             Destroy(this.gameObject);
+            SceneManager.LoadScene(3);
         }
     }
-
-   
 }
