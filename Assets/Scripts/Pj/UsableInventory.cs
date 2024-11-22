@@ -68,6 +68,7 @@ public class UsableInventory : MonoBehaviour
         {
             if (CraftRef.healthPotions.Count > 0 && healtRef.currentHealth <=100)
             {
+                CraftRef.healthPotions.RemoveAt(0);
                 audiosource.PlayOneShot(usePotion);
                 healtRef.RestoreLife(healtRestore);
             }
