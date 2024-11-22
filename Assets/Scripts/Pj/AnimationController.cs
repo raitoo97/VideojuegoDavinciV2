@@ -11,52 +11,14 @@ public class AnimationController : MonoBehaviour
         animator = this.GetComponent<Animator>();
     }
 
+    float lastDirX = 0;
+    float lastDirY = -1;
     private void Update()
     {
+
         float dirX = 0;
         float dirY = 0;
         bool isWalking = false;
-
-        /* if (Input.GetKey(KeyCode.W))
-         {
-             animator.SetFloat("DirX", 0);
-             animator.SetFloat("DirY", 1);
-             animator.SetBool("Walk", true);
-         }
-         else
-         {
-             animator.SetBool("Walk", false);
-         }
-         if (Input.GetKey(KeyCode.S))
-         {
-             animator.SetFloat("DirX", 0);
-             animator.SetFloat("DirY", -1);
-             animator.SetBool("Walk", true);
-         }
-         else
-         {
-             animator.SetBool("Walk", false);
-         }
-         if (Input.GetKey(KeyCode.A))
-         {
-             animator.SetFloat("DirX", -1);
-             animator.SetFloat("DirY", 0);
-             animator.SetBool("Walk", true);
-         }
-         else
-         {
-             animator.SetBool("Walk", false);
-         }
-         if (Input.GetKey(KeyCode.D))
-         {
-             animator.SetFloat("DirX", 1);
-             animator.SetFloat("DirY", 0);
-             animator.SetBool("Walk", true);
-         }
-         else
-         {
-             animator.SetBool("Walk", false);
-         }*/
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -79,9 +41,19 @@ public class AnimationController : MonoBehaviour
             dirX = 1;
             isWalking = true;
         }
+            lastDirX = dirX;
+            lastDirY = dirY;
+        if(isWalking == false)
+        {
+            animator.SetFloat("lastDirX", lastDirX);
+            animator.SetFloat("lastDirY", lastDirY);
+        }
+
         animator.SetFloat("DirX", dirX);
         animator.SetFloat("DirY", dirY);
         animator.SetBool("Walk", isWalking);
+        
+
 
     }
 }
