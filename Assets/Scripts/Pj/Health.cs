@@ -25,10 +25,6 @@ public class Health : MonoBehaviour
         }
         
     }
-    private void Update()
-    {
-        print(currentHealth);
-    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -42,7 +38,11 @@ public class Health : MonoBehaviour
         }
 
     }
-
+    public void RestoreLife(int life)
+    {
+        currentHealth += life;
+        healtBar.SetHealth(currentHealth);
+    }
     /*#region 
         IEnumerator es una interfaz que define cómo iterar sobre una colección de elementos. 
         En C#, se usa en combinación con yield para implementar una secuencia que puede ser iterada uno a uno. 
