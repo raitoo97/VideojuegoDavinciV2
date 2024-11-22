@@ -24,7 +24,6 @@ public class Bomb : MonoBehaviour
         }
         // Daño por veneno
         CauseDamageInArea();
-
         // Destruir la bomba
         Destroy(gameObject);
     }

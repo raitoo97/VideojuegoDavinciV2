@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-
 public class EnemyBehavior : MonoBehaviour
 {
-    [SerializeField] private GameObject healthBarPrefab;
     //private EnemyHealthBar healthBar;
     [SerializeField] float hitPoints = 100f;
     [SerializeField] int damage = 10;
@@ -39,12 +34,18 @@ public class EnemyBehavior : MonoBehaviour
             {
                 canMove= false;
             }
-
             if (canMove) 
             {
                 rb.MovePosition(rb.position + (Vector2)transform.up * speed * Time.deltaTime);
             }
-            
+        }
+    }
+    private void Update()
+    {
+        if (hitPoints <= 0)
+        {
+            dropMaterial();
+            Destroy(gameObject); // Destruye el enemigo
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -61,24 +62,14 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            dropMaterial();
-        }
-    }
     void dropMaterial()
     {
         //Numero aleatorio a partir de la lista Enum 
         int randomType = Random.Range(0, System.Enum.GetValues(typeof(Material.MATERIALS)).Length);
-
         // Instancia el prefab "Material" en el lugar donde el enemigo muere
         GameObject materialObject = Instantiate(materialPrefab, transform.position, Quaternion.identity);
-
         // Accede al componente Material para cambiar el tipo
         Material materialDropped = materialObject.GetComponent<Material>();
-
         if (materialDropped != null)
         {
             materialDropped.OnCreatedMaterial((Material.MATERIALS)randomType);
