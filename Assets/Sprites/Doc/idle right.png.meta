@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b48e1d2f41b79374faf735d09d9557ff
+guid: ca8acc475cbfea6469bac5d30e389c0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,12 +45,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 171
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,127 +110,146 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_right_0
+      name: idle right_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 6
         y: 0
-        width: 102
-        height: 171
+        width: 42
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
+      physicsShape:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 72f2f3d0aa88ca1459448c2f20921696
-      internalID: 1564190954
+      spriteID: 8cfd689950681364c87b1832218393f7
+      internalID: 57320979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_right_1
+      name: idle right_1
       rect:
         serializedVersion: 2
-        x: 210
+        x: 66
         y: 0
-        width: 102
-        height: 168
+        width: 42
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
+      physicsShape:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: f7b98de667b80ef4e88609fd6bd3313a
-      internalID: 1691376309
+      spriteID: 1907139a43f6917499ad703e1aed3e4e
+      internalID: -1543219971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_right_2
+      name: idle right_2
       rect:
         serializedVersion: 2
-        x: 390
+        x: 126
         y: 0
-        width: 99
-        height: 171
+        width: 42
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
+      physicsShape:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: 9eb074c79878c294c8b975bd033e3e7b
-      internalID: -1315681264
+      spriteID: 9ab05dfcfd1f2fb48bfcddd59b03221f
+      internalID: -1772311285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_right_3
+      name: idle right_3
       rect:
         serializedVersion: 2
-        x: 570
+        x: 186
         y: 0
-        width: 99
-        height: 171
+        width: 42
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
+      physicsShape:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: cbc8317b3a10a224da489dd09ef76d09
-      internalID: -1414585057
+      spriteID: 99426cdccbb25094f92884618c4a2e91
+      internalID: 2124835514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_right_4
+      name: idle right_4
       rect:
         serializedVersion: 2
-        x: 750
+        x: 246
         y: 0
-        width: 99
-        height: 168
+        width: 42
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
+      outline:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
+      physicsShape:
+      - - {x: 0, y: -29.5}
+        - {x: 30, y: 0}
+        - {x: 0, y: 29.5}
+        - {x: -30, y: 0}
       tessellationDetail: 0
       bones: []
-      spriteID: fbb0435c95e02d3418df026fcadb1820
-      internalID: 1298495915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_right_5
-      rect:
-        serializedVersion: 2
-        x: 930
-        y: 0
-        width: 102
-        height: 171
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d46f1679228782e428dddd3a635340c8
-      internalID: 142002399
+      spriteID: 4c89ebacc266cc74984a09816db1f587
+      internalID: 432028139
       vertices: []
       indices: 
       edges: []
@@ -246,12 +265,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walk_right_0: 1564190954
-      walk_right_1: 1691376309
-      walk_right_2: -1315681264
-      walk_right_3: -1414585057
-      walk_right_4: 1298495915
-      walk_right_5: 142002399
+      idle right_0: 57320979
+      idle right_1: -1543219971
+      idle right_2: -1772311285
+      idle right_3: 2124835514
+      idle right_4: 432028139
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

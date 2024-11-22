@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5b41e54ab3679d4f999ff3e27a19e1b
+guid: 35337087317306f4a9d1ccf34826db28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,12 +45,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 171
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_down_0
+      name: idle down_0
       rect:
         serializedVersion: 2
-        x: 21
+        x: 3
         y: 0
-        width: 81
-        height: 168
+        width: 35
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f922ee85f0769a4893461d8968c2066
-      internalID: 423664710
+      spriteID: 400b64f39118b604da3f6902a2eca646
+      internalID: -914150338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_down_1
+      name: idle down_1
       rect:
         serializedVersion: 2
-        x: 144
+        x: 44
         y: 0
-        width: 81
-        height: 168
+        width: 35
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 072f8df5efd40d649a16d6532d86bd60
-      internalID: 1428507265
+      spriteID: dd6c9a7e446bfa648b890491b71362fc
+      internalID: 1453313942
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_down_2
+      name: idle down_2
       rect:
         serializedVersion: 2
-        x: 267
+        x: 85
         y: 0
-        width: 81
-        height: 168
+        width: 35
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea4a321ba97fd9b4b95c9240d21cb26c
-      internalID: -1479373514
+      spriteID: da57c5ad873f07847bf8daf19526f385
+      internalID: 1681541787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_down_3
+      name: idle down_3
       rect:
         serializedVersion: 2
-        x: 390
+        x: 126
         y: 0
-        width: 81
-        height: 171
+        width: 35
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95cb737a062836e43a660632b9e0c50e
-      internalID: -4546687
+      spriteID: 1324dd895255b6f4495813ce90e09b44
+      internalID: 594864245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_down_4
+      name: idle down_4
       rect:
         serializedVersion: 2
-        x: 513
+        x: 167
         y: 0
-        width: 81
-        height: 171
+        width: 35
+        height: 59
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,29 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e435c98d28b1b8d438bd8944644c28db
-      internalID: -1038712835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_down_5
-      rect:
-        serializedVersion: 2
-        x: 636
-        y: 0
-        width: 81
-        height: 165
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a574764755396ef45bf0d1e5bd07ef93
-      internalID: 1393416589
+      spriteID: 8596ad7dc49f30545b3eb71bc3d2d9f1
+      internalID: -1760290719
       vertices: []
       indices: 
       edges: []
@@ -246,12 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walk_down_0: 423664710
-      walk_down_1: 1428507265
-      walk_down_2: -1479373514
-      walk_down_3: -4546687
-      walk_down_4: -1038712835
-      walk_down_5: 1393416589
+      idle down_0: -914150338
+      idle down_1: 1453313942
+      idle down_2: 1681541787
+      idle down_3: 594864245
+      idle down_4: -1760290719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
