@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public List<int> fire;
 
     
+    
     private void Awake()
     {
         if (instance == null)
@@ -18,13 +19,15 @@ public class Inventory : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        
         oil = new List<int>();
         blood = new List<int>();
         fire = new List<int>();
     }
     private void Update()
     {
-        //PruebaItemsAdd();
+        PruebaItemsAdd();
     }
 
     public void AddMaterial(Material.MATERIALS materialType) 
@@ -54,7 +57,7 @@ public class Inventory : MonoBehaviour
     }
 
 
-    /*
+
     public void PruebaItemsAdd()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -97,7 +100,7 @@ public class Inventory : MonoBehaviour
         }
         print($"Conseguiste {count} de Fuego");
     }
-    */
+
     public int RemoveOil(int necessaryAmount)
     {
         if(oil.Count >= necessaryAmount)
