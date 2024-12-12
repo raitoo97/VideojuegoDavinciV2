@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class CraftMannager : MonoBehaviour
 {
     private Inventory inventoryRef;
@@ -24,6 +25,10 @@ public class CraftMannager : MonoBehaviour
     [SerializeField] AudioClip craftPotion;
     [SerializeField] AudioClip craftSpecialBullets;
     private AudioSource audiosource;
+    //Buttons
+    public Button craftBombButon;
+    public Button craftHealthPotion;
+    public Button craftSpecialBullet;
     private void Awake()
     {
         if (instance == null)
@@ -55,6 +60,10 @@ public class CraftMannager : MonoBehaviour
         countOilToSpecialBullets = 30;
         countBloodToSpecialBullets = 0;
         countFireToSpecialBullets = 30;
+        //Buttons
+        craftBombButon.onClick.AddListener(CraftBomb);
+        craftHealthPotion.onClick.AddListener(CraftHealthPotion);
+        craftSpecialBullet.onClick.AddListener(CraftSpecialBullets);
     }
     private void Update()
     {
