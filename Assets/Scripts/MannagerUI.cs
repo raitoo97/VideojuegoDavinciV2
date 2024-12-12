@@ -8,19 +8,12 @@ public class MannagerUI : MonoBehaviour
     public Text bombsCount;
     public Text healthPotionCount;
     public Text bulletsCount;
-    public Button craftBomb;
-    public Button craftHealthPotion;
-    public Button craftSpecialBullet;
     private Inventory inventoryRef;
     private CraftMannager CraftRef;
     private void Start()
     {
         CraftRef = CraftMannager.instance;
         inventoryRef = Inventory.instance;
-        //Botones
-        craftBomb.onClick.AddListener(CraftRef.CraftBomb);
-        craftHealthPotion.onClick.AddListener(CraftRef.CraftHealthPotion);
-        craftSpecialBullet.onClick.AddListener(CraftRef.CraftSpecialBullets);
     }
     void Update()
     {
