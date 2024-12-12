@@ -84,7 +84,6 @@ public class UsableInventory : MonoBehaviour
         }
         else
         {
-            print("No tenes balas especiales");
             refAim.HAVESPECIALBULLET = false;
         }
     }
