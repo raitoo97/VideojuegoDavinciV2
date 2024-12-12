@@ -1,6 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-
 public class UsableInventory : MonoBehaviour
 {
     private CraftMannager CraftRef;
@@ -8,24 +6,23 @@ public class UsableInventory : MonoBehaviour
     [SerializeField] Transform bombSpawn;
     private Health healtRef;
     public int healtRestore;
-
     private AudioSource audiosource;
     [SerializeField] AudioClip usePotion;
     [SerializeField] AudioClip useBomb;
-
+    aim refAim;
     private void Start()
     {
         CraftRef = CraftMannager.instance;
         healtRef = GameObject.FindAnyObjectByType<Health>();
         healtRestore = 20;
-
+        refAim = GameObject.FindAnyObjectByType<aim>();
         audiosource = GetComponent<AudioSource>();
     }
     void Update()
     {
         UseBomb();
         UsePotion();
-        UseShield();
+        UseSpecialBullets();
     }
     public void UseBomb()
     {
@@ -78,19 +75,17 @@ public class UsableInventory : MonoBehaviour
             }
         }
     }
-    public void UseShield()
+    public void UseSpecialBullets()
     {
         if (CraftRef == null) return;
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (CraftRef.SpecialBullets.Count > 0)
         {
-            if (CraftRef.shieldPotions.Count > 0)
-            {
-                CraftRef.shieldPotions.RemoveAt(0);
-            }
-            else
-            {
-                print("No tenes escudos");
-            }
+            refAim.HAVESPECIALBULLET = true;
+        }
+        else
+        {
+            print("No tenes balas especiales");
+            refAim.HAVESPECIALBULLET = false;
         }
     }
 }
