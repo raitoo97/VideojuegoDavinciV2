@@ -1,14 +1,17 @@
 using UnityEngine;
-public class Bullet : MonoBehaviour
+public class SpecialBullets : MonoBehaviour
 {
     [SerializeField] float speed;
-    [SerializeField] float lifetime;
-    public float damage;
+    [SerializeField] float damage;
+    [SerializeField] float lifeTime;
     void Start()
     {
-        Destroy(gameObject, lifetime);
-        damage = 30f;
+        damage = 100;
+        speed = 10;
+        Destroy(gameObject,lifeTime);
     }
+
+    // Update is called once per frame
     void Update()
     {
         transform.position += transform.up * speed * Time.deltaTime;
@@ -26,8 +29,6 @@ public class Bullet : MonoBehaviour
             {
                 RefEnemigo.TakeDamage(damage);
             }
-            Destroy(this.gameObject);
         }
     }
 }
-
