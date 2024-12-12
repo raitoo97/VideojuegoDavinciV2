@@ -1,27 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
 public class SpawnEnemies : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] Transform enemySpawn;
+    [SerializeField] Transform spawnPoint;
     [SerializeField] float spawnTime = 2f;  // Tiempo de espera entre apariciones
-    [SerializeField] int distance = 11;
+    [SerializeField] int distance = 15;
     bool onRange;
     Transform player;
-    [SerializeField] int health = 2;
-
+    [SerializeField] float health = 240f;
     void Start()
     {
+        //enemySpawn = gameObject.transform.position;
         // Obtener referencia al jugador
         player = GameManager.instance.player.transform;
 
         // Comenzar la corutina para respawnear enemigos
         StartCoroutine(Respawn());
     }
-
     void Update()
     {
         // Verificar si el jugador está en rango
@@ -35,16 +31,13 @@ public class SpawnEnemies : MonoBehaviour
             onRange = false;
         }
 
-        if (health<= 0 )
+        if (health <= 0 )
         {
             Destroy(gameObject);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
         // Infligir daño al jugador
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -58,17 +51,16 @@ public class SpawnEnemies : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Bullet bulletDamage = collision.gameObject.GetComponent<Bullet>();
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            health--;
+            
+            health = health - bulletDamage.damage;
         }
     }
-
     #region Spawn
-
     // Corutina para reaparecer enemigos
     IEnumerator Respawn()
     {
@@ -77,19 +69,18 @@ public class SpawnEnemies : MonoBehaviour
             if (onRange)  // Si el jugador está en rango, se genera un enemigo
             {
                 GameObject enemy = Instantiate(enemyPrefab);
-                enemy.transform.position = enemySpawn.position;
+                
+                Vector2 spawnPosition = spawnPoint.position;
 
                 // Posicionar al enemigo de manera aleatoria en el eje X
-                Vector2 enemyMovement = enemy.transform.position;
-                enemyMovement.x = Random.Range(-6, 6);
-                enemy.transform.position = enemyMovement;
+
+                spawnPosition.x += Random.Range(-1, 1);
+                enemy.transform.position = spawnPosition;
             }
 
             // Esperar el tiempo antes de reaparecer otro enemigo
             yield return new WaitForSeconds(spawnTime);
         }
     }
-
     #endregion
-    
 }

@@ -7,10 +7,10 @@ public class MannagerUI : MonoBehaviour
     public Text fireCount;
     public Text bombsCount;
     public Text healthPotionCount;
-    public Text shieldCount;
+    public Text bulletsCount;
     public Button craftBomb;
     public Button craftHealthPotion;
-    public Button craftShieldPotion;
+    public Button craftSpecialBullet;
     private Inventory inventoryRef;
     private CraftMannager CraftRef;
     private void Start()
@@ -20,7 +20,7 @@ public class MannagerUI : MonoBehaviour
         //Botones
         craftBomb.onClick.AddListener(CraftRef.CraftBomb);
         craftHealthPotion.onClick.AddListener(CraftRef.CraftHealthPotion);
-        craftShieldPotion.onClick.AddListener(CraftRef.CraftShieldPotion);
+        craftSpecialBullet.onClick.AddListener(CraftRef.CraftSpecialBullets);
     }
     void Update()
     {
@@ -34,6 +34,6 @@ public class MannagerUI : MonoBehaviour
         fireCount.text = inventoryRef.GetFireCount().ToString();
         bombsCount.text = CraftRef.GETBOMBS.ToString();
         healthPotionCount.text = CraftRef.GETPOTION.ToString();
-        shieldCount.text = CraftRef.GETSHIELDS.ToString();
+        bulletsCount.text = CraftRef.GETSPECIALBULLETS.ToString();
     }
 }
