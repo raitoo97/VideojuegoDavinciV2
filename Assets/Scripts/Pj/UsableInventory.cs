@@ -1,6 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-
 public class UsableInventory : MonoBehaviour
 {
     private CraftMannager CraftRef;
@@ -8,11 +6,9 @@ public class UsableInventory : MonoBehaviour
     [SerializeField] Transform bombSpawn;
     private Health healtRef;
     public int healtRestore;
-
     private AudioSource audiosource;
     [SerializeField] AudioClip usePotion;
     [SerializeField] AudioClip useBomb;
-
     private void Start()
     {
         CraftRef = CraftMannager.instance;
@@ -25,7 +21,7 @@ public class UsableInventory : MonoBehaviour
     {
         UseBomb();
         UsePotion();
-        UseShield();
+        UseSpecialBullets();
     }
     public void UseBomb()
     {
@@ -78,14 +74,14 @@ public class UsableInventory : MonoBehaviour
             }
         }
     }
-    public void UseShield()
+    public void UseSpecialBullets()
     {
         if (CraftRef == null) return;
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (CraftRef.shieldPotions.Count > 0)
+            if (CraftRef.SpecialBullets.Count > 0)
             {
-                CraftRef.shieldPotions.RemoveAt(0);
+                CraftRef.SpecialBullets.RemoveAt(0);
             }
             else
             {
