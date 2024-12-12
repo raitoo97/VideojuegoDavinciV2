@@ -14,7 +14,7 @@ public class CraftMannager : MonoBehaviour
     [SerializeField] public int countBloodToHealthPotion;
     [SerializeField] public int countFireToHealthPotion;
     public List <int> healthPotions;
-    //ShieldPotion
+    //SpecialBullets
     [SerializeField] public int countOilToSpecialBullets;
     [SerializeField] public int countBloodToSpecialBullets;
     [SerializeField] public int countFireToSpecialBullets;
@@ -52,9 +52,9 @@ public class CraftMannager : MonoBehaviour
         countBloodToHealthPotion = 20;
         countFireToHealthPotion = 0;
         //Balas
-        countOilToSpecialBullets = 50;
+        countOilToSpecialBullets = 30;
         countBloodToSpecialBullets = 0;
-        countFireToSpecialBullets = 50;
+        countFireToSpecialBullets = 30;
     }
     private void Update()
     {

@@ -9,12 +9,13 @@ public class UsableInventory : MonoBehaviour
     private AudioSource audiosource;
     [SerializeField] AudioClip usePotion;
     [SerializeField] AudioClip useBomb;
+    aim refAim;
     private void Start()
     {
         CraftRef = CraftMannager.instance;
         healtRef = GameObject.FindAnyObjectByType<Health>();
         healtRestore = 20;
-
+        refAim = GameObject.FindAnyObjectByType<aim>();
         audiosource = GetComponent<AudioSource>();
     }
     void Update()
@@ -77,16 +78,14 @@ public class UsableInventory : MonoBehaviour
     public void UseSpecialBullets()
     {
         if (CraftRef == null) return;
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (CraftRef.SpecialBullets.Count > 0)
         {
-            if (CraftRef.SpecialBullets.Count > 0)
-            {
-                CraftRef.SpecialBullets.RemoveAt(0);
-            }
-            else
-            {
-                print("No tenes escudos");
-            }
+            refAim.HAVESPECIALBULLET = true;
+        }
+        else
+        {
+            print("No tenes balas especiales");
+            refAim.HAVESPECIALBULLET = false;
         }
     }
 }
