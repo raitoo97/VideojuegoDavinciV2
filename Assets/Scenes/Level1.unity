@@ -722,7 +722,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 2, y: 0}
-  m_SizeDelta: {x: 300, y: 50}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &28778724
 MonoBehaviour:
@@ -788,8 +788,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 776202950, guid: 96091f584479d6d4a9c54519edb4f313, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1840,6 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a540d199d4bd04eb295207a2a86069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementVelocity: 0
   stunTime: 0
   stunned: 0
 --- !u!50 &80813731
@@ -6992,8 +6993,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1741302088, guid: ba8f8141a29b9b84491686ba62bd3746, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9510,7 +9511,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Salir
+  m_Text: '
+
+'
 --- !u!222 &385383434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13037,7 +13040,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Menu Principal
+  m_Text: 
 --- !u!222 &606870900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14117,7 +14120,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -2.199997, y: 0}
-  m_SizeDelta: {x: 300, y: 50}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &653127036
 MonoBehaviour:
@@ -14183,8 +14186,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1898465234, guid: 90896933953e2eb449175339362f5473, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -18536,8 +18539,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2038388614, guid: 96091f584479d6d4a9c54519edb4f313, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -27755,7 +27758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Balas Especiales
+  m_Text: 
 --- !u!222 &1044342275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30580,7 +30583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bombas
+  m_Text: '
 
 '
 --- !u!222 &1182620377
@@ -32493,8 +32496,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1878112702, guid: 90896933953e2eb449175339362f5473, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -39270,7 +39273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pociones de vida
+  m_Text: 
 --- !u!222 &1486103719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40007,7 +40010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continuar
+  m_Text: 
 --- !u!222 &1523677290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50803,10 +50806,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 219784730261585223, guid: 4c4e3475996115449a1165d3f14e0bbc, type: 3}
   specialBulletPrefab: {fileID: 1540625219039882140, guid: 9c0a56e8e598e52448adfd3969f7301c, type: 3}
   bulletSpawn: {fileID: 1394961045}
-  coolDown: 0
-  shootsLeft: 0
   haveSpecialBullet: 0
   shootSound: {fileID: 8300000, guid: 0606a89edf19e3144b1f7b06e5782336, type: 3}
+  time: 0
+  reloadTime: 0
+  bulletAmount: 0
+  maxBulletAmount: 6
 --- !u!1 &2028442504
 GameObject:
   m_ObjectHideFlags: 0
@@ -51261,8 +51266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -932817035, guid: ba8f8141a29b9b84491686ba62bd3746, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -52386,6 +52391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 1314187966237666932, guid: d32a165d1c532df469ef6ae128809ee2, type: 3}
   multp: 1.5
+  duration: 3
 --- !u!58 &2109759930
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -52470,7 +52476,7 @@ SpriteRenderer:
   m_Size: {x: 0.48, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2109759932
