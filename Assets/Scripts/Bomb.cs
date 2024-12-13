@@ -19,7 +19,6 @@ public class Bomb : MonoBehaviour
         explosionEffectIndicator = Instantiate(explosionRadiusIndicator, transform.position, Quaternion.identity);
         explosionEffectIndicator.transform.position = transform.position;
         explosionEffectIndicator.transform.localScale = new Vector3(explosionRadius, explosionRadius, 1);
-
         // Añadir CircleCollider2D para detectar los enemigos dentro del radio
         var collider = explosionEffectIndicator.AddComponent<CircleCollider2D>();
         collider.isTrigger = true;
