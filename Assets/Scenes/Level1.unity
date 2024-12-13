@@ -722,7 +722,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 2, y: 0}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &28778724
 MonoBehaviour:
@@ -788,8 +788,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 776202950, guid: 96091f584479d6d4a9c54519edb4f313, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   SpecialBullets: 
   craftBomb: {fileID: 8300000, guid: 744ffa0776d87ab4aad6e8c70f3813eb, type: 3}
   craftPotion: {fileID: 8300000, guid: d0ab2a3950136094686be7f82c2fca02, type: 3}
-  craftSpecialBullets: {fileID: 0}
+  craftSpecialBullets: {fileID: 8300000, guid: a227da392508c8e4f844e428738b52ad, type: 3}
   craftBombButon: {fileID: 28778724}
   craftHealthPotion: {fileID: 1310935140}
   craftSpecialBullet: {fileID: 653127036}
@@ -6993,8 +6993,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1741302088, guid: ba8f8141a29b9b84491686ba62bd3746, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9511,9 +9511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: Salir
 --- !u!222 &385383434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13040,7 +13038,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Menu Principal
 --- !u!222 &606870900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14120,7 +14118,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -2.199997, y: 0}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &653127036
 MonoBehaviour:
@@ -14186,8 +14184,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1898465234, guid: 90896933953e2eb449175339362f5473, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14395,8 +14393,8 @@ Transform:
   m_GameObject: {fileID: 662925953}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 27.89, y: 2.05, z: -0.33633247}
-  m_LocalScale: {x: 0.9309691, y: 0.165, z: 1}
+  m_LocalPosition: {x: 27.89, y: 1.98, z: -0.33633247}
+  m_LocalScale: {x: 0.81459796, y: 0.165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 417565256}
@@ -17547,12 +17545,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2010964707}
     - target: {fileID: 2926599029252794553, guid: 49ed5354a30573745bf9f7f86e5daac9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2926599029252794553, guid: 49ed5354a30573745bf9f7f86e5daac9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 70.34
       objectReference: {fileID: 0}
     - target: {fileID: 2926599029252794553, guid: 49ed5354a30573745bf9f7f86e5daac9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -35.95
+      value: -36.35
       objectReference: {fileID: 0}
     - target: {fileID: 2926599029252794553, guid: 49ed5354a30573745bf9f7f86e5daac9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18539,8 +18541,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2038388614, guid: 96091f584479d6d4a9c54519edb4f313, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -27758,7 +27760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Balas Especiales
 --- !u!222 &1044342275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30583,7 +30585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
+  m_Text: 'Bombas
 
 '
 --- !u!222 &1182620377
@@ -32496,8 +32498,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1878112702, guid: 90896933953e2eb449175339362f5473, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -39273,7 +39275,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Pociones de vida
 --- !u!222 &1486103719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40010,7 +40012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Continuar
 --- !u!222 &1523677290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44956,7 +44958,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 27.89, y: 4.625, z: -0.33633247}
-  m_LocalScale: {x: 2.0946805, y: 0.165, z: 1}
+  m_LocalScale: {x: 1.4662764, y: 0.165, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 417565256}
@@ -45723,6 +45725,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3394343258214183603, guid: 55435de61ef06e649bf39093b32738c8, type: 3}
   m_PrefabInstance: {fileID: 1711451737}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1711928417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.2294474
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -41.440746
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707357837001388130, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640187246707053838, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
+      propertyPath: m_Name
+      value: power_up_speed (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ae07149343b4944d87b9807b1c22e8c, type: 3}
 --- !u!1 &1713419861
 GameObject:
   m_ObjectHideFlags: 0
@@ -50807,7 +50866,11 @@ MonoBehaviour:
   specialBulletPrefab: {fileID: 1540625219039882140, guid: 9c0a56e8e598e52448adfd3969f7301c, type: 3}
   bulletSpawn: {fileID: 1394961045}
   haveSpecialBullet: 0
-  shootSound: {fileID: 8300000, guid: 0606a89edf19e3144b1f7b06e5782336, type: 3}
+  shootSound:
+  - {fileID: 8300000, guid: dbde26beb4c322c4490c541a395bb388, type: 3}
+  - {fileID: 8300000, guid: a3bbe92016ebd9049ac4a56a90e8a8ff, type: 3}
+  - {fileID: 8300000, guid: 9a64ed50cbc34a540a72c3e003fad665, type: 3}
+  - {fileID: 8300000, guid: a43b1166ee8f7a94d9b341d624323d19, type: 3}
   time: 0
   reloadTime: 0
   bulletAmount: 0
@@ -51266,8 +51329,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -932817035, guid: ba8f8141a29b9b84491686ba62bd3746, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -52392,6 +52455,7 @@ MonoBehaviour:
   pickupEffect: {fileID: 1314187966237666932, guid: d32a165d1c532df469ef6ae128809ee2, type: 3}
   multp: 1.5
   duration: 3
+  pickUp: {fileID: 0}
 --- !u!58 &2109759930
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -53425,3 +53489,4 @@ SceneRoots:
   - {fileID: 141981729}
   - {fileID: 1229345905}
   - {fileID: 1715338566}
+  - {fileID: 1711928417}
